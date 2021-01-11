@@ -1,0 +1,29 @@
+<form [formGroup]="incomesForm" class="text-center" (ngSubmit)="onSubmit(incomesForm.value)">
+    <h1 class="text-success">Incomes</h1>
+    <div >
+
+        <div class="d-inline-block">
+            <input type="number" required name="amount" style="width: 100px;" class="input" placeholder="Amount" formControlName="amount">
+       </div>
+  
+       <div class="d-inline-block ml-1">
+            <input type="text" required name="description" class="input" placeholder="Description" formControlName="description">
+      </div>
+
+    <div class="d-inline-block ml-3">
+        <button type="submit" style="vertical-align: unset;" class="btn btn-success">
+            Add
+        </button>
+      </div>
+
+      
+    </div>
+        <div *ngFor="let item of incomesList" class="budget-item">
+            <div class="descriptio">
+                <p class="mb-0">{{ item.description }}</p>
+              </div>
+              <div class="amount">
+                <p class="mb-0">{{ item.amount }}</p>
+              </div>
+        </div>
+</form>
